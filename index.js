@@ -7,7 +7,7 @@ import userRoute from "./routes/userRoute.js";
 import cors from "cors";
 
 const app = express();
-
+app.use(cors());
 //Middleware for parsing req body
 app.use(express.json());
 
@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
 });
 
 //middleware for handling cors policy
-app.use(cors());
+
 
 //Middleware to handle requests with prefix of
 app.use("/books", booksRoute);
