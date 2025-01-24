@@ -8,6 +8,13 @@ import cors from "cors";
 
 const app = express();
 app.use(cors());
+
+
+let corsOptions = {
+  origin : ['http://localhost:5173','https://book-store-frontend-five-ebon.vercel.app'],
+}
+
+app.use(cors(corsOptions))
 //Middleware for parsing req body
 app.use(express.json());
 
